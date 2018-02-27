@@ -1,2 +1,0 @@
-
-int demande_nombre();
