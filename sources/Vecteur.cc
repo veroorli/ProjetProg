@@ -26,19 +26,21 @@ class Vecteur {
 		else {return false;}
 		;}
 	
+	//add vectors (c'est le premier des deux opérandes qui fixe la dimension du résultat)
 	Vecteur addition(Vecteur autre) const{
 		Vecteur a;
-		if (autre.getVecteur().size() >= vecteur.size()){
-			for (size_t i=0; i<autre.getVecteur().size(); i++) {
-				a.augmente(autre.getVecteur()[i]+vecteur[i]);
-				} return a;
-			}
-		else { 
 			for (size_t i=0; i<vecteur.size(); i++) {
 			a.augmente(autre.getVecteur()[i]+vecteur[i]);
-				} return a;
 			}
 			return a;}
+	//soustraction (voir add)
+	Vecteur soustractio(Vecteur autre) const{
+		Vecteur a;
+			for (size_t i=0; i<vecteur.size(); i++) {
+			a.augmente(autre.getVecteur()[i]-vecteur[i]);
+			}
+		return a;
+		}
 	
 	private:
 	vector<double> vecteur;
