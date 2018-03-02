@@ -5,6 +5,7 @@ using namespace std;
 
 class Vecteur {
 	public:
+	
 	//rajoute une dimension au vecteur
 	void augmente(double valeur) {vecteur.push_back(valeur);}
 	//modifie la valeur d'une coordonnée 
@@ -24,6 +25,20 @@ class Vecteur {
 		}
 		else {return false;}
 		;}
+	
+	Vecteur addition(Vecteur autre) const{
+		Vecteur a;
+		if (autre.getVecteur().size() >= vecteur.size()){
+			for (size_t i=0; i<autre.getVecteur().size(); i++) {
+				a.augmente(autre.getVecteur()[i]+vecteur[i]);
+				} return a;
+			}
+		else { 
+			for (size_t i=0; i<vecteur.size(); i++) {
+			a.augmente(autre.getVecteur()[i]+vecteur[i]);
+				} return a;
+			}
+			return a;}
 	
 	private:
 	vector<double> vecteur;
@@ -73,5 +88,9 @@ if (not vect1.compare(vect3)) {
     cout << "égal au";
 }
 cout << " vecteur 3." << endl;
+
+Vecteur v1;
+v1=vect1.addition(vect2);
+v1.affiche();
 
 	}
