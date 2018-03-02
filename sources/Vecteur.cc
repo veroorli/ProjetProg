@@ -18,7 +18,10 @@ class Vecteur {
 		}
 	//compare des vectuers
 	bool compare(Vecteur test) {
-		if (test.getVecteur() == vecteur ) {return true;}
+		if (test.getVecteur().size() == vecteur.size()) {
+			if (test.getVecteur() == vecteur ) {return true;}
+			else {return false;}
+		}
 		else {return false;}
 		;}
 	
