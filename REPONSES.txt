@@ -1,1 +1,10 @@
-
+SEMAINE 2 
+[Question P1.1] Comment représentez-vous ces vecteurs ? Comment sont-ils organisés : quels attributs ? quelles méthodes ? quels droits d'accès ?
+	Pour representer les vecteurs dans le programme on a créé une classe "Vecteur". Pour cette classe, les attributs en private sont:
+	- un vecteur du type vector (il contient la liste des coordonnées du vecteur)
+	les méthodes en private sont:
+	- un fonction "getVecteur" qui retourne le vecteur de l'attribut ci dessus
+	Les méthodes en public sont:
+	- une fonction "agumente" qui rajoute une dimension au vecteur consideré et qui prend en argument le valeur à rajouter
+	- une fonction "affiche" qui affiche ce vecteur
+	- une fonction "compare" qui test si le vecteur consideré est égal à un autre vecteur pris en argument. Cette fonction fait appel à la méthode "getVecteur" et en première instance teste les tailles des deux vecteurs et, dans le cas ou elles sont égales, teste les valeurs de chaqu'une des composantes des vecteurs.
