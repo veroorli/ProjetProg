@@ -7,4 +7,19 @@ SEMAINE 2
 	Les méthodes en public sont:
 	- une fonction "agumente" qui rajoute une dimension au vecteur consideré et qui prend en argument le valeur à rajouter
 	- une fonction "affiche" qui affiche ce vecteur
-	- une fonction "compare" qui test si le vecteur consideré est égal à un autre vecteur pris en argument. Cette fonction fait appel à la méthode "getVecteur" et en première instance teste les tailles des deux vecteurs et, dans le cas ou elles sont égales, teste les valeurs de chaqu'une des composantes des vecteurs.
+	- une fonction "compare" qui test si le vecteur consideré est égal à un autre vecteur pris en argument. Cette fonction fait appel à la méthode "getVecteur" et en première instance teste les tailles des deux vecteurs et, dans le cas ou elles sont égales, teste les valeurs de chacune des composantes des vecteurs.
+       -
+
+
+
+
+
+[Question P1.2] Quel choix avez vous fait pour les opérations entre vecteurs de dimensions différentes ?
+
+
+
+
+
+
+
+

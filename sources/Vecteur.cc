@@ -1,98 +1,117 @@
 #include <iostream>
-#include <vector> 
-
+#include <vector>
+#include "Vecteur.h"
+ 
 using namespace std;
 
-class Vecteur {
-	public:
+
+
+//rajoute une dimension au vecteur
+	void Vecteur::augmente(double valeur) {vecteur.push_back(valeur);}
 	
-	//rajoute une dimension au vecteur
-	void augmente(double valeur) {vecteur.push_back(valeur);}
 	//modifie la valeur d'une coordonnée 
-	void set_coord(int position, double valeur) {
-		vecteur[position-1] = valeur;
-		}
+	void Vecteur::set_coord(int position, double valeur) {
+		vecteur[position-1] = valeur;}
+	
 	//affiche les valeurs 
-	void affiche() const {
+	void Vecteur::affiche() const {
 		for (size_t i=0; i<vecteur.size(); i++) {cout << vecteur[i] << " ";}
-		cout << endl;
-		}
-	//compare des vectuers
-	bool compare(Vecteur test) {
-		if (test.getVecteur().size() == vecteur.size()) {
-			if (test.getVecteur() == vecteur ) {return true;}
-			else {return false;}
-		}
+		cout << endl;}
+	
+	//compare des vecteurs
+	bool Vecteur::compare(Vecteur test) {
+		
+		if (test.getVecteur() == vecteur ) {return true;}
 		else {return false;}
-		;}
-	
-	//add vectors (c'est le premier des deux opérandes qui fixe la dimension du résultat)
-	Vecteur addition(Vecteur autre) const{
-		Vecteur a;
-			for (size_t i=0; i<vecteur.size(); i++) {
-			a.augmente(autre.getVecteur()[i]+vecteur[i]);
-			}
-			return a;}
-	//soustraction (voir add)
-	Vecteur soustractio(Vecteur autre) const{
-		Vecteur a;
-			for (size_t i=0; i<vecteur.size(); i++) {
-			a.augmente(autre.getVecteur()[i]-vecteur[i]);
-			}
-		return a;
-		}
-	
-	private:
-	vector<double> vecteur;
-	vector<double> getVecteur() {return vecteur;}
-	
-	};
-	
-	
-int main() {
-	
-Vecteur vect1;
-Vecteur vect2;
-Vecteur vect3;
-
-/* Cette partie
- * (1) pourrait être écrite autrement, par exemple avec des
- *     manipulateurs (set_coord) ;
- * (2) sera revue dans 2 semaines (constructeurs, surcharge des opérateurs).
- */
-// v1 = (1.0, 2.0, -0.1)
-vect1.augmente(1.0); vect1.augmente(0.0); vect1.augmente(-0.1);
-vect1.set_coord(1, 2.0); // pour tester set_coord()
-
-// v2 = (2.6, 3.5,  4.1)
-vect2.augmente(2.6); vect2.augmente(3.5); vect2.augmente(4.1);
-
-vect3 = vect1;
-
-cout << "Vecteur 1 : ";
-vect1.affiche();
-cout << endl;
-
-cout << "Vecteur 2 : ";
-vect2.affiche();
-cout << endl;
-
-cout << "Le vecteur 1 est ";
-if (vect1.compare(vect2)) {
-    cout << "égal au";
-} else {
-    cout << "différent du";
-}
-cout << " vecteur 2," << endl << "et est ";
-if (not vect1.compare(vect3)) {
-    cout << "différent du";
-} else {
-    cout << "égal au";
-}
-cout << " vecteur 3." << endl;
-
-Vecteur v1;
-v1=vect1.addition(vect2);
-v1.affiche();
-
 	}
+	
+	//creation de l'opposé d'un vecteur     
+        Vecteur Vecteur::oppose() const {
+                Vecteur op; 
+                  for (size_t i=0; i<vecteur.size(); i++) {
+                          op.augmente(0-vecteur[i]);}
+                  return op;}
+      
+     //multiplication par un scalaire
+        Vecteur Vecteur:: mult(double x) const {
+                Vecteur multiplie; 
+                  for (size_t i=0; i<vecteur.size(); i++) {
+                          multiplie.augmente(vecteur[i]*x);
+                          }
+                return multiplie;
+                }
+                
+     //multiplication des deux vecteurs (c'est le premier des deux opérandes qui fixe la dimension du résultat)
+       double Vecteur::prod_scal(Vecteur autre) const {
+                        size_t n;
+                        if (vecteur.size()<=autre.getVecteur().size()) 
+                                n = vecteur.size();
+                        else 
+                                n = autre.getVecteur().size();
+                        
+                double resultat(0);
+                for (size_t i=0; i<n; i++) {
+                        resultat += autre.getVecteur()[i]*vecteur[i];
+                        }
+                return resultat;
+                }
+        
+        
+         //add vectors (choisir par convention que c'est la plus petite des deux dimensions qui détermine l'opération )
+			Vecteur Vecteur::addition(Vecteur autre) const{
+				Vecteur a;
+				size_t n;
+				if (vecteur.size()<=autre.getVecteur().size()) 
+				n = vecteur.size();
+				else 
+				n = autre.getVecteur().size();
+				for (size_t i=0; i<n; i++) {
+				a.augmente(autre.getVecteur()[i]+vecteur[i]);
+				}
+				return a;}
+        //soustraction (voir add)
+        Vecteur Vecteur::soustractio(Vecteur autre) const{
+                Vecteur a;
+                        size_t n;
+                        if (vecteur.size()<=autre.getVecteur().size()) 
+                                n = vecteur.size();
+                        else 
+                                n = autre.getVecteur().size();
+                        for (size_t i=0; i<n; i++) {
+                        a.augmente(autre.getVecteur()[i]-vecteur[i]);
+                        }
+                return a;
+                }
+
+        //produit vectoriel de vecteurs de dim 3
+        Vecteur Vecteur:: prod_vect(Vecteur multiplier) const {
+                Vecteur resultat; 
+                if ((multiplier.getVecteur().size() == 3) and (vecteur.size() == 3)) {
+                                resultat.getVecteur()[0] = (vecteur[1]*multiplier.getVecteur()[2]-vecteur[2]*multiplier.getVecteur()[1]);
+                                resultat.getVecteur()[1] = (vecteur[2]*multiplier.getVecteur()[0]-vecteur[0]*multiplier.getVecteur()[2]);
+                                resultat.getVecteur()[2] = (vecteur[0]*multiplier.getVecteur()[1]-vecteur[1]*multiplier.getVecteur()[0]);
+                        return resultat;
+                        }
+                else throw int(-1);
+                } 
+        
+        //calcul norme
+        double Vecteur::norme() {
+                double x; 
+                for (size_t i=0; i<vecteur.size(); i++) {
+                x = x + (vecteur[i]*vecteur[i]); 
+                        } 
+                        return sqrt(x);
+                }
+        //calcul norme au carre
+        double Vecteur::norme2() {
+                double x; 
+                for (size_t i=0; i<vecteur.size(); i++) {
+                x = x + (vecteur[i]*vecteur[i]); 
+                        } 
+                        return x;
+                }
+                
+        //sert a returner le vecteur qui est en private
+        vector<double> Vecteur::getVecteur() {return vecteur;} 
+        
