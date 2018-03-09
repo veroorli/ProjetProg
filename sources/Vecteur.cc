@@ -87,9 +87,9 @@ using namespace std;
         Vecteur Vecteur:: prod_vect(Vecteur multiplier) const {
                 Vecteur resultat; 
                 if ((multiplier.getVecteur().size() == 3) and (vecteur.size() == 3)) {
-                                resultat.getVecteur()[0] = (vecteur[1]*multiplier.getVecteur()[2]-vecteur[2]*multiplier.getVecteur()[1]);
-                                resultat.getVecteur()[1] = (vecteur[2]*multiplier.getVecteur()[0]-vecteur[0]*multiplier.getVecteur()[2]);
-                                resultat.getVecteur()[2] = (vecteur[0]*multiplier.getVecteur()[1]-vecteur[1]*multiplier.getVecteur()[0]);
+                                resultat.augmente(vecteur[1]*multiplier.getVecteur()[2]-vecteur[2]*multiplier.getVecteur()[1]);
+                                resultat.augmente(vecteur[2]*multiplier.getVecteur()[0]-vecteur[0]*multiplier.getVecteur()[2]);
+                                resultat.augmente(vecteur[0]*multiplier.getVecteur()[1]-vecteur[1]*multiplier.getVecteur()[0]);
                         return resultat;
                         }
                 else throw int(-1);
