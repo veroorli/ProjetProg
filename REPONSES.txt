@@ -17,6 +17,12 @@ SEMAINE 2
 [Question P1.2] Quel choix avez vous fait pour les opérations entre vecteurs de dimensions différentes ?
 
 
+SEMAINE 4
+[Question P4.1] Avez-vous ajouté un constructeur de copie ? Pourquoi (justifiez votre choix) ?
+On n'a pas ajouté un constructeur de copie parce que pour comme on a définit la classe Vecteur, 
+le constructeur par défaut marche très bien. On aurait préféré d'ajouter un constructeur de copie
+si un des attributs était un pointeur, pour éviter des problèmes 
+
 
 
 

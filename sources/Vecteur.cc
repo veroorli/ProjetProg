@@ -14,89 +14,68 @@ using namespace std;
 		vecteur[position-1] = valeur;}
 	
 	//affiche les valeurs 
-	void Vecteur::affiche() const {
-		for (size_t i=0; i<vecteur.size(); i++) {cout << vecteur[i] << " ";}
-		cout << endl;}
+	/*void Vecteur::affiche(ostream& sortie) const {
+		for (size_t i=0; i<vecteur.size(); i++) {sortie << vecteur[i] << " ";}
+		sortie << endl;}*/
 	
 	//compare des vecteurs
-	bool Vecteur::compare(Vecteur test) {
-		
-		if (test.getVecteur() == vecteur ) {return true;}
-		else {return false;}
+	bool Vecteur::operator==(const Vecteur &test) const {
+		if (test.size() != this->size() ) 
+			return false;
+			
+		for (size_t i(0); i<test.size(); ++i) {
+				if (test[i]!= vecteur[i]) 
+					return false;
+				}
+				return true;}
+				
+	bool Vecteur::operator!=(const Vecteur &test) const
+	{
+		return not(*this == test);
 	}
+		
 	
 	//creation de l'opposé d'un vecteur     
-        Vecteur Vecteur::oppose() const {
+    Vecteur Vecteur::oppose() const {
                 Vecteur op; 
                   for (size_t i=0; i<vecteur.size(); i++) {
                           op.augmente(0-vecteur[i]);}
                   return op;}
       
-     //multiplication par un scalaire
-        Vecteur Vecteur:: mult(double x) const {
-                Vecteur multiplie; 
-                  for (size_t i=0; i<vecteur.size(); i++) {
-                          multiplie.augmente(vecteur[i]*x);
-                          }
-                return multiplie;
-                }
-                
-     //multiplication des deux vecteurs (c'est le premier des deux opérandes qui fixe la dimension du résultat)
-       double Vecteur::prod_scal(Vecteur autre) const {
-                        size_t n;
-                        if (vecteur.size()<=autre.getVecteur().size()) 
-                                n = vecteur.size();
-                        else 
-                                n = autre.getVecteur().size();
-                        
-                double resultat(0);
-                for (size_t i=0; i<n; i++) {
-                        resultat += autre.getVecteur()[i]*vecteur[i];
-                        }
-                return resultat;
-                }
-        
-        
-         //add vectors (choisir par convention que c'est la plus petite des deux dimensions qui détermine l'opération )
-			Vecteur Vecteur::addition(Vecteur autre) const{
-				Vecteur a;
-				size_t n;
-				if (vecteur.size()<=autre.getVecteur().size()) 
-				n = vecteur.size();
-				else 
-				n = autre.getVecteur().size();
-				for (size_t i=0; i<n; i++) {
-				a.augmente(autre.getVecteur()[i]+vecteur[i]);
-				}
-				return a;}
-        //soustraction (voir add)
-        Vecteur Vecteur::soustractio(Vecteur autre) const{
-                Vecteur a;
-                        size_t n;
-                        if (vecteur.size()<=autre.getVecteur().size()) 
-                                n = vecteur.size();
-                        else 
-                                n = autre.getVecteur().size();
-                        for (size_t i=0; i<n; i++) {
-                        a.augmente(autre.getVecteur()[i]-vecteur[i]);
-                        }
-                return a;
-                }
 
-        //produit vectoriel de vecteurs de dim 3
-        Vecteur Vecteur:: prod_vect(Vecteur multiplier) const {
-                Vecteur resultat; 
-                if ((multiplier.getVecteur().size() == 3) and (vecteur.size() == 3)) {
-                                resultat.augmente(vecteur[1]*multiplier.getVecteur()[2]-vecteur[2]*multiplier.getVecteur()[1]);
-                                resultat.augmente(vecteur[2]*multiplier.getVecteur()[0]-vecteur[0]*multiplier.getVecteur()[2]);
-                                resultat.augmente(vecteur[0]*multiplier.getVecteur()[1]-vecteur[1]*multiplier.getVecteur()[0]);
-                        return resultat;
-                        }
-                else throw int(-1);
-                } 
+     //add vectors (choisir par convention que c'est la plus petite des deux dimensions qui détermine l'opération )
+	 Vecteur& Vecteur::operator+=(const Vecteur &autre) {
+				
+				size_t n;
+				if (this->size()<= autre.size()) //this est mon instance
+				n = this->size();
+				else 
+				n = autre.size();
+				
+				for (size_t i=0; i<n; i++) 
+					(*this)[i] += autre[i]; //this[] = this[]+autre[]
+				
+				return *this;
+			}
+			
+        //soustraction (voir add)
+      Vecteur& Vecteur::operator-=(const Vecteur &autre) {
+                
+               size_t n;
+				if (this->size()<= autre.size()) //this est mon instance
+				n = this->size();
+				else 
+				n = autre.size();
+				
+				for (size_t i=0; i<n; i++) 
+					(*this)[i] -= autre[i];
+				
+				return *this;
+             }
+
         
         //calcul norme
-        double Vecteur::norme() {
+      double Vecteur::norme() {
                 double x; 
                 for (size_t i=0; i<vecteur.size(); i++) {
                 x = x + (vecteur[i]*vecteur[i]); 
@@ -104,7 +83,7 @@ using namespace std;
                         return sqrt(x);
                 }
         //calcul norme au carre
-        double Vecteur::norme2() {
+       double Vecteur::norme2() {
                 double x; 
                 for (size_t i=0; i<vecteur.size(); i++) {
                 x = x + (vecteur[i]*vecteur[i]); 
@@ -112,6 +91,88 @@ using namespace std;
                         return x;
                 }
                 
-        //sert a returner le vecteur qui est en private
-        vector<double> Vecteur::getVecteur() {return vecteur;} 
         
+        //vector<double> Vecteur::getVecteur() {return vecteur;} 
+        //tous qui est ici est pour avoir accès à la taille et aux elements de mon vecteur sans créer des copies ou interferer avec le private
+      size_t Vecteur::size() const
+        {
+			return vecteur.size();
+		}
+	
+	  double& Vecteur::operator[](size_t i)
+		{
+			return vecteur[i];
+		}
+		
+	  const double& Vecteur::operator[](size_t i) const
+		{
+			return vecteur[i];
+		}
+		
+	   //constructeur qui crée un vecteur nul pour la dimension passée en argument
+	   Vecteur::Vecteur(size_t dim) : vecteur(dim, 0.0) {}
+	   
+	   //Constructeur 3D (utile pour la géométrie)
+	   Vecteur::Vecteur(double x, double y, double z) 
+	   {
+		   vecteur.reserve(3);
+		   
+		   vecteur.push_back(x);
+		   vecteur.push_back(y);
+		   vecteur.push_back(z);
+		}
+	
+//addition (externe)	
+Vecteur operator+(Vecteur v, const Vecteur &autre)
+{
+	return v += autre; //je peux faire ca car v est une copie donc il ne modifie pas directement v
+}
+
+//soustraction (externe)
+Vecteur operator-(Vecteur v, const Vecteur &autre)
+{
+	return v -= autre;
+	}
+
+//produit scalaire (externe)
+double operator*(const Vecteur &v1, const Vecteur &v2) {
+     size_t n;
+     if (v1.size()<=v2.size()) {
+         n = v1.size();}
+		else {
+         n = v2.size();}
+                        
+     double resultat(0);
+     for (size_t i=0; i<n; i++) {
+         resultat += v1[i]*v2[i];}
+     return resultat;
+                }
+	
+ //multiplication par un scalaire
+Vecteur operator*(const Vecteur &v, double scalaire) {
+	Vecteur multiplie; 
+       for (size_t i=0; i<v.size(); i++) {
+            multiplie.augmente(v[i]*scalaire);
+            }
+    return multiplie;
+	}
+	
+//produit vectoriel
+Vecteur operator^(const Vecteur &v1, const Vecteur &v2){
+     Vecteur resultat; 
+                if ((v1.size() == 3) and (v2.size() == 3)) {
+                                resultat.augmente(v1[1]*v2[2]-v1[2]*v2[1]);
+                                resultat.augmente(v1[2]*v2[0]-v1[0]*v2[2]);
+                                resultat.augmente(v1[0]*v2[1]-v1[1]*v2[0]);
+        return resultat;
+                   }
+    else throw int(-1);
+            } 
+
+
+//operateur affichage 	
+ostream& operator<<(ostream& sortie, const Vecteur &v) {
+	for (size_t i=0; i<v.size(); i++) {sortie << v[i] << " ";}
+		sortie << endl;
+	return sortie;
+	}
