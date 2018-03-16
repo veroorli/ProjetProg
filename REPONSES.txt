@@ -19,13 +19,16 @@ SEMAINE 2
 
 SEMAINE 4
 [Question P4.1] Avez-vous ajouté un constructeur de copie ? Pourquoi (justifiez votre choix) ?
-On n'a pas ajouté un constructeur de copie parce que pour comme on a définit la classe Vecteur, 
-le constructeur par défaut marche très bien. On aurait préféré d'ajouter un constructeur de copie
-si un des attributs était un pointeur, pour éviter des problèmes 
+Nous avons choisit de ne pas ajouter de constructeur de copie pour le moment car on considere que ce n est pas utile car on a pas utilise de pointeur comme attribut.
+Dans le cas ou nous aurions utilise un pointeur comme attribut de la classe,pour ne pas creer de "bugg" au moment de la supression de l objet pointé.
 
+[Question P4.2] Si l'on souhaitait ajouter un constructeur par coordonnées sphériques (deux angles et une longueur) pour les vecteurs de dimension 3,
 
+a] que cela impliquerait-il au niveau des attributs de la classe ?
+b] quelle serait la difficulté majeure (voire l'impossibilité) de sa réalisation en C++ ? (C'est d'ailleurs pour cela qu'on ne vous demande pas de faire un tel constructeur !)
 
-
+Le probleme ici est le suivant: si l'on veut distinguer les angles des longeurs dans un meme tableau (car nous avons cree des surcharges pour le type vector) il nous faudrait utiliser un tableau de pointeurs , ce qui changerait notre reponse precedente: cela nous demanderait de travailler avec des constructeurs et desctructeurs de copies.
+ 
 
 
 
