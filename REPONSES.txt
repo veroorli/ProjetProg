@@ -15,6 +15,7 @@ SEMAINE 2
 
 
 [Question P1.2] Quel choix avez vous fait pour les opérations entre vecteurs de dimensions différentes ?
+Pour toutes les operations, est le vecteur de plus petite taille qui détermine l'opération.
 
 
 SEMAINE 4
@@ -28,7 +29,16 @@ a] que cela impliquerait-il au niveau des attributs de la classe ?
 b] quelle serait la difficulté majeure (voire l'impossibilité) de sa réalisation en C++ ? (C'est d'ailleurs pour cela qu'on ne vous demande pas de faire un tel constructeur !)
 
 Le probleme ici est le suivant: si l'on veut distinguer les angles des longeurs dans un meme tableau (car nous avons cree des surcharges pour le type vector) il nous faudrait utiliser un tableau de pointeurs , ce qui changerait notre reponse precedente: cela nous demanderait de travailler avec des constructeurs et desctructeurs de copies.
- 
 
-
-
+[Question P4.3] Quels opérateurs avez vous introduits ?
+Nous avons introduit: 
+- un operateur == dans la classe Vecteur
+- un operateur != dans la classe Vecteur (inseré car on a introduit == ) 
+- un operateur += dans la classe Vecteur
+- un operateur -= dans la classe Vecteur
+- un operateur [] dans la classe Vecteur qui sert à renvoier un element i du vector "vecteur" (attribut in private)
+- un operatuer + à l'exterieur de la classe Vecteur (addition entre instances du type Vecteur)
+- un operateur - à l'exterieur de la classe Vecteur (soustraction entre instances du type Vecteur)
+- un operateur * à l'exterieur de la classe Vecteur (produit scalaire entre deux vecteurs, prend en argoument deux references constantes du type Vectuer et retourne un type double)
+- un operateur * à l'exterieur de la classe Vecteur (produit entre un vecteur et un sclaire, prend en argoument une reference constante du type Vecteur et un scalaire du type double et retourne un type Vecteur)
+- un operateur ^ à l'exterieur de la classe Vecteur (produit vectoriel entre deux instances di type Vecteur) 
