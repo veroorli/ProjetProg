@@ -1,1 +1,37 @@
 
++semaine 1:formation du groupe
+
+semaine 2:
+
+Création de la classe vecteur avec les méthodes publiques: augmente , set coord , affiche ,compare qui permettent de modifier et afficher l attribut privé qui est un tableau dynamique de double pour représenter le vecteur.
+
+**nous avons aussi rajoute dans la classe des méthodes permettant de faire des opérations mathématiques de base avec entres vecteurs. Ces opérations sont: l'addition, la soustraction, le calcule de l'opposé d'un vecteur, le produit scalaire, le produit vectoriel, la multiplication par un scalaire, le calcule de la norme d'un vecteur. En particulier, le calcule de la norme est fait par deux méthodes différents, un de ce deux retournant la norme et l'autre le carré de la norme.
+
+Nous avons trouve judicieux de représenter le vecteur par un tableau dynamique de double car plusieurs valeurs de meme type lui sont attribuées (dans le cas d un repère cartésien) en fonction des degrés de libertés.
+
+Nous avons ainsi rajouté un méthode size() qui permet de retourner la taille de l'attribut privé "vecteur" de type vector. **
+ 
+ 
+
+semaine 3: Modularisation du dossier Programme.
+Premier dossier : 
+-Vecteur.h contenant la classe vecteur et les déclarations de méthode ainsi que attributs. 
+-Vecteur.cc:contenant les définitions des méthodes correspondantes au déclarations dans le fichier vecteur.h
+-Vecteur.test: contenant le main
+
+Les trois dossier sont relies grâce au include qui permettent les liaisons ainsi que le makefile que nous avons crees de manière un peu particulière. 
+
+Nous avons cree le ficher sources contenant tous les dossier.cc
+et le fichier include contenant tous les dossiers .h .
+Nous pensons que dans le projet nous allons utiliser plusieurs classes donc pour une meilleure modularisation nous avons choisi de séparer la déclaration et la définition de chaque classe dans des dossiers.h différents.
+
+Le makefile que nous avons écrit a l’aide de la  commande wilcard va relier tous les dossiers .h contenus dans le fichier include aux dossier .cc contenus dans le fichier sources. 
+
+
+semaine 4:
+création des constructeurs de la classe Vecteur,qui permet l initialisation de deux vecteurs le cas ou on rentre seulement la dimension du tableau dynamique
+l autre lorsque l on entre trois coordonnes cartésiennes de type double 
+// Pour éviter … nous avons choisit de créer un constructeur par défaut (celui par défaut par défaut de la version c++ étant été supprime lors de la creation des constructeurs précédents)
+
+Création de surcharges: a chaque  méthode de la classe vecteur , surcharges internet/externe. 
+**aux surcharges conseilles nous avons rajouté dans la classe vecteur une surcharge de l'opérateur [] qui permet d'avoir plus facile accès aux éléments de l'attribut privé "vecteur" de type vector.
