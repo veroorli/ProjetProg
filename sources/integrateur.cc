@@ -1,4 +1,4 @@
-
+#include <iostream>
 #include "integrateur.h"
 #include "Vecteur.h"
 #include "oscillateur.h"

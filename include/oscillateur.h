@@ -6,7 +6,7 @@
 
 class Oscillateur{
 	public:
-	Vecteur fonction(double t);
+	Vecteur fonction(double to);
 	void setP (Vecteur set);
 	void setP (Vecteur set);
 	Vecteur getP();

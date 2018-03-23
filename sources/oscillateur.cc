@@ -1,6 +1,6 @@
 #include <iostream>
 #include "oscillateur.h"
-Vecteur Oscillateur::fonction(int t){
+Vecteur Oscillateur::fonction(double to){
 	
 	return t*(P+Q);
 }
