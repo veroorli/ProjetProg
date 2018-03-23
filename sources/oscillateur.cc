@@ -2,7 +2,7 @@
 #include "oscillateur.h"
 Vecteur Oscillateur::fonction(double to){
 	
-	return t*(P+Q);
+	return to*(P+Q);
 }
 
 void Oscillateur::setP (Vecteur set) {
@@ -17,4 +17,5 @@ Vecteur Oscillateur :: getP() {
 Vecteur Oscillateur :: getQ() {
 	return Q;
 	};
-	
+	//constructeur
+Oscillateur :: Oscillateur(Vecteur P, Vecteur Q) : P(P), Q(Q), G(0.0, 0.0, 9.81) {}

@@ -1,14 +1,5 @@
 #pragma once
 
-
-#include <iostream>
-
-#include "integrateur.h"
-#include "Vecteur.h"
-#include "oscillateur.h"
-
-using namespace std; 
-
 class Integrateur {
 	
 	protected: 
