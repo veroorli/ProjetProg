@@ -42,3 +42,16 @@ Nous avons introduit:
 - un operateur * à l'exterieur de la classe Vecteur (produit scalaire entre deux vecteurs, prend en argoument deux references constantes du type Vectuer et retourne un type double)
 - un operateur * à l'exterieur de la classe Vecteur (produit entre un vecteur et un sclaire, prend en argoument une reference constante du type Vecteur et un scalaire du type double et retourne un type Vecteur)
 - un operateur ^ à l'exterieur de la classe Vecteur (produit vectoriel entre deux instances di type Vecteur) 
+
+
+SEMAINE 5
+[Question P6.1] Comment avez vous conçu votre classe Integrateur ? 
+La classe Integrateur qu'on a concu est une classe qui n'a ni d'arguments ni de methodes. On a prefere creer une classe Integrateur que aura comme sous classes 
+les differents types possibiles d'integration numeriques, et donc on rajoutera les methodes partages entre les differents sous classes une fois que celles ci seront concues.
+
+[Question P6.2] Quelle est la relation entre les classes Integrateur et IntegrateurEulerCromer ?
+La classe IntegrateurEulerCromer (qu'on a appele IntegrateurEC) est une sous classe de la classe Integrateur.
+
+[Question P7.1] Comment se situent ces classes par rapport à la classe Oscillateur définie la semaine passée ?
+Les classes Pendule et Ressort sont deux sous classes differentes de la classe Oscillateur. Les deux implementent la methode fonction de la classe Oscillateur
+et partagent les attrubuts d'Oscillateur. Nous avons aussi rajoute des nouveaux attributs à ces deux classes.

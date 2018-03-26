@@ -1,9 +1,10 @@
-
+/*
 #include <iostream>
 #include <vector> 
 #include "Vecteur.h"
 #include <cmath> 
 #include "oscillateur.h"
+ 
 
 using namespace std;
 
@@ -39,8 +40,6 @@ if (vect1 != vect3) {
 }
 cout << " vecteur 3." << endl;
 
-Oscillateur o;
-int temps(5);
-o.fonction(temps);
 
-	}
+
+	} */
