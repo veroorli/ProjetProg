@@ -173,6 +173,6 @@ Vecteur operator^(const Vecteur &v1, const Vecteur &v2){
 //operateur affichage 	
 ostream& operator<<(ostream& sortie, const Vecteur &v) {
 	for (size_t i=0; i<v.size(); i++) {sortie << v[i] << " ";}
-		sortie << endl;
+		
 	return sortie;
 	}

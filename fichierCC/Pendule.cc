@@ -1,5 +1,8 @@
 
+#include "Vecteur.h"
+#include "oscillateur.h"
 #include "Pendule.h"
+
 
 Vecteur Pendule :: fonction(double to) {
 	Vecteur resultat;
@@ -7,10 +10,7 @@ Vecteur Pendule :: fonction(double to) {
 	return resultat;
 	}
 
-Pendule::Pendule(double longueur1, double masse1, double frottement1, Vecteur P, Vecteur Q) : Oscillateur(P, Q), longueur(longueur1), masse(masse1), frottement(frottement1) {
-	if (masse1<=0) {
-		throw int(-1);
-		}
+Pendule::Pendule(double longueur1, double masse1, double frottement1, Vecteur P, Vecteur Q) : Oscillateur(P, Q, masse1), longueur(longueur1), frottement(frottement1) {
 	if (longueur1<=0) {
 		throw int(-1); 
 		}

@@ -1,7 +1,9 @@
 #pragma once
 
+
+#include "Vecteur.h"
 #include "oscillateur.h"
-#include <cmath>
+#include "Pendule.h"
 
 class Pendule : public Oscillateur {
 	//il faut faire un coinstructeur pour un vecteur a une dimension P et un vectuer de dim 1 Q(degree de liberte 1)
@@ -12,7 +14,6 @@ class Pendule : public Oscillateur {
 	
 	private:
 	double longueur; //longueur pendule
-	double masse;
 	double frottement; //frott de l'aire ou du fluide correspondant à lambda
 	}; 
 

@@ -9,9 +9,9 @@ LDFLAGS += -pg # pour profiler
 
 
 #SOURCES := src/main.cc src/test.cc
-SOURCES := $(wildcard sources/*.cc) 
+FICHIERCC := $(wildcard fichierCC/*.cc) 
 #si je veux rajouter des autres wildcard utiliser + 
-INCLUDE := include
+FICHIERH := fichierH
 
 all: $(BIN)
 
@@ -19,7 +19,7 @@ all: $(BIN)
 .PHONY: clear
 
 $(BIN): clear
-	g++ -o $@ $(SOURCES) -I $(INCLUDE)
+	g++ -o $@ $(FICHIERCC) -I $(FICHIERH)
 
 clear:
 	rm -rfv $(BIN)

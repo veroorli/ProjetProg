@@ -8,11 +8,6 @@ Vecteur Oscillateur::fonction(double to){
 	return to*(P+Q);
 }
 
-/*Vecteur Oscillateur::fonctiontest(){ ////sert pour le test
-	Vecteur v(2);
-	v.set_coord(2, -9.81);
-	return v;
-}*/
 
 
 void Oscillateur::setP (Vecteur set) {
@@ -27,8 +22,23 @@ Vecteur Oscillateur :: getP() const{
 Vecteur Oscillateur :: getQ() const{
 	return Q;
 	};
+Vecteur Oscillateur :: getG() const {
+	return G;
+	};
 	//constructeur
-Oscillateur :: Oscillateur(Vecteur P, Vecteur Q) : P(P), Q(Q), G(0.0, 0.0, -9.81) {}
+Oscillateur :: Oscillateur(Vecteur P, Vecteur Q, double masse) : P(P), Q(Q), masse(masse), G(0) {
+	if (P.size() != Q.size()){
+		cout << "erreur taille P differente de Q" << endl;
+		}
+		else {
+			for (unsigned int i(0); i<(P.size()-1); ++i) {
+				G.augmente(0.0); 
+				}
+			G.augmente(-9.81);
+			}   //initialise vecteur gravite en fonction du nb n de coordonnes (mets sur n-1 coord la valeur 0.0 et sur la dereniere -9.81)
+		
+	if(masse<=0){cout<<"erreur masse <=0" << endl;}
+	} 
 Oscillateur :: Oscillateur() : P(3), Q(3), G(0.0, 0.0, -9.81) {}
 
    //affichage (operateur externe)
