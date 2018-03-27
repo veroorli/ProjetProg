@@ -70,6 +70,7 @@ std::ostream& operator<<(std::ostream& sortie, const Vecteur &v);
 double operator*(const Vecteur &v1, const Vecteur &v2);
 //multiplication par un scalaire (externe)
 Vecteur operator*(const Vecteur &v, double scalaire);
+Vecteur operator*(double scalaire, const Vecteur &v);
 //produit vectoriel (externe) entre vecteurs de dimension 3 : il lance un erreur si les deux vecteurs ne sont pas de dim 3
 Vecteur operator^(const Vecteur &v1, const Vecteur &v2);
 

@@ -1,4 +1,4 @@
-#include "integrateurEU.h"
+#include "integrateurEC.h"
 
 using namespace std; 
 

@@ -157,6 +157,13 @@ Vecteur operator*(const Vecteur &v, double scalaire) {
     return multiplie;
 	}
 	
+Vecteur operator*(double scalaire, const Vecteur &v) {
+	Vecteur multiplie; 
+       for (size_t i=0; i<v.size(); i++) {
+            multiplie.augmente(v[i]*scalaire);
+            }
+    return multiplie;}
+	
 //produit vectoriel
 Vecteur operator^(const Vecteur &v1, const Vecteur &v2){
      Vecteur resultat; 
