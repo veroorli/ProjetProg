@@ -12,8 +12,17 @@ Vecteur Pendule :: fonction(double to) {
 
 Pendule::Pendule(double longueur1, double masse1, double frottement1, Vecteur P, Vecteur Q) : Oscillateur(P, Q, masse1), longueur(longueur1), frottement(frottement1) {
 	if (longueur1<=0) {
-		throw int(-1); 
+		std::cout<<"erreur longueur trop petite ou nulle pendule"<< std::endl; 
 		}
 	};
-	
+//get
+
+double::Pendule setlongueur(double set){longueur=set;}
+double :: Pendule setfrottement(double set){frottement=set;}
+
+//set
+
+void :: Pendule getlongeur()const{return longueur;}
+void:: Pendule getfrottement()const{return frottement;}
+
 	
