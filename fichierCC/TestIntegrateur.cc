@@ -50,7 +50,7 @@ cout << "deuxieme partie du test" << endl;
 	double to(1);
 	
 	cout << "In oscillateur: " << os << endl;
-	cout << to *( os.getP() + os.getQ()) << endl;
+	//cout << to *( os.getP() + os.getQ()) << endl;
 	
 	Vecteur v = os.fonction(to); 
 	cout << v << endl;
