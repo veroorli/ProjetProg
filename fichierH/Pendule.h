@@ -11,7 +11,13 @@ class Pendule : public Oscillateur {
 	Vecteur fonction(double to);
 	//constructeur du pendule
 	Pendule(double longueur, double masse, double frottement, Vecteur P, Vecteur Q);
-	
+    //set
+    void setlongueur(double set);
+    void setfrottement(double set);
+    //get
+    double getlongueur()const;
+    double getfrottement() const;
+    
 	private:
 	double longueur; //longueur pendule
 	double frottement; //frott de l'aire ou du fluide correspondant à lambda

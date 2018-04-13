@@ -34,7 +34,7 @@ Oscillateur :: Oscillateur(Vecteur P, Vecteur Q, double masse) : P(P), Q(Q), mas
 			for (unsigned int i(0); i<(P.size()-1); ++i) {
 				G.augmente(0.0); 
 				}
-			G.augmente(-9.81);
+			G.augmente(-9.81);// on place dans la derniere coordonne du vecteur la valeur de g
 			}   //initialise vecteur gravite en fonction du nb n de coordonnes (mets sur n-1 coord la valeur 0.0 et sur la dereniere -9.81)
 		
 	if(masse<=0){cout<<"erreur masse <=0" << endl;}
