@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "Vecteur.h"
+#include "vecteur.h"
  
 using namespace std;
 
@@ -166,7 +166,7 @@ Vecteur operator*(double scalaire, const Vecteur &v) {
 	
 //produit vectoriel
 Vecteur operator^(const Vecteur &v1, const Vecteur &v2){
-     Vecteur resultat; 
+     Vecteur resultat(0); 
                 if ((v1.size() == 3) and (v2.size() == 3)) {
                                 resultat.augmente(v1[1]*v2[2]-v1[2]*v2[1]);
                                 resultat.augmente(v1[2]*v2[0]-v1[0]*v2[2]);

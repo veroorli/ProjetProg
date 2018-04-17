@@ -1,9 +1,9 @@
 #pragma once
 
 
-#include "Vecteur.h"
+#include "vecteur.h"
 #include "oscillateur.h"
-#include "Pendule.h"
+#include "pendule.h"
 
 class Pendule : public Oscillateur {
 	//il faut faire un coinstructeur pour un vecteur a une dimension P et un vectuer de dim 1 Q(degree de liberte 1)

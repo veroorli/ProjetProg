@@ -1,10 +1,12 @@
-
-*/#include <iostream>
+/*
+#include <iostream>
 #include <vector> 
-#include "Vecteur.h"
+#include "vecteur.h"
 #include <cmath> 
 #include "oscillateur.h"
 #include "ressort.h"
+#include "pendule.h"
+#include "integrateurEC.h"
  
 
 using namespace std;
@@ -19,18 +21,23 @@ Q.set_coord(1,0);
 
 double m(0.25);
 double k (0.33);
-double longeur(0);
+double longueur(0); //NE MARCHE PAS POUR L=0 pour pendule
 double lambda(0.15);
 
 
 
 Ressort ress (P,Q,k, m,lambda, A);
-Pendule pend(longueur,m,lambda,P,Q);
+//Pendule pend(longueur,m,lambda,P,Q);
+
+
 
 IntegrateurEC integr;
 double dt(0.01);
-double to(0);
-cout<<evolue (&ress, dt,to)<<endl;
-cout<< evolue(&pend,dt,to)<<endl;
+double to(5);
+integr.evolue(ress, dt,to); //L'ERREUR EST ICI ET EST LIE AU POLYMORPHISME
+//integr.evolue(pend,dt,to); //polimorphysme pour passer en paramete
+cout << "ressort : " << ress << endl;
+//cout << "pendule" << pend << endl;
+cout << A << endl;
 }
 */

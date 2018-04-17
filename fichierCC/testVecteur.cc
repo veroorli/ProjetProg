@@ -1,9 +1,10 @@
-/*
+
 #include <iostream>
 #include <vector> 
-#include "Vecteur.h"
+#include "vecteur.h"
 #include <cmath> 
 #include "oscillateur.h"
+#include <iostream> 
  
 
 using namespace std;
@@ -40,6 +41,15 @@ if (vect1 != vect3) {
 }
 cout << " vecteur 3." << endl;
 
+cout << "***********nouveau test" << endl;
+
+cout << vect1*vect2 << endl;
+cout << vect2*vect1 << endl;
+cout << 3*vect1 << endl;
+Vecteur vect5;
+cout << (vect1 ^ vect2) << endl;
 
 
-	} */
+
+
+	} 

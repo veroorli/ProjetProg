@@ -1,7 +1,7 @@
 #pragma once
 
 #include "integrateur.h"
-#include "Vecteur.h"
+#include "vecteur.h"
 #include "oscillateur.h"
 
 class IntegrateurEC : public Integrateur {

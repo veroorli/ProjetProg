@@ -2,12 +2,12 @@
 
 
 #include <iostream>
-#include "Vecteur.h"
+#include "vecteur.h"
 
 class Oscillateur{
 	public:
 	
-	Vecteur fonction(double to);
+	virtual Vecteur fonction(double to); //J'ai mis ca comme virtuelle comme ca l'integrateur peut etre associe a ressort et pendule 
 
 	void setP (Vecteur set);
 	void setQ (Vecteur set);

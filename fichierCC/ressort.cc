@@ -10,7 +10,10 @@ Ressort::Ressort (Vecteur& P,Vecteur& Q,double k,double masse,double lambda,Vect
 	{}
 // fonction diff	
 Vecteur Ressort:: fonction(double to){
-		return ((-k/masse)*P[0]-(lambda/masse)*Q[0]+G*A);
+	Vecteur resultat(3); //returne un resultat en 3D comme pendule
+	double res_fonction = ((-k/masse)*P[0]-(lambda/masse)*Q[0]+G*A);
+	resultat.set_coord(1, res_fonction); 
+		return resultat; //il faut que la fonction returne un vecteur 
 	}
  // set
 void Ressort::setk (double set) {

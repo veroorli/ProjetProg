@@ -1,14 +1,16 @@
 
-#include "Vecteur.h"
+#include "vecteur.h"
 #include "oscillateur.h"
-#include "Pendule.h"
+#include "pendule.h"
 
 
 Vecteur Pendule :: fonction(double to) {
-	Vecteur resultat;
-	resultat = 0-(G.norme()/longueur)*sin(P[0])-(frottement/(masse*longueur*longueur))*Q[0];
+	Vecteur resultat(3); //vectuer en 3D
+	double res_fonction;
+	res_fonction = 0-(G.norme()/longueur)*sin(P[0])-(frottement/(masse*longueur*longueur))*Q[0];
+	resultat.set_coord(1, res_fonction);
 	return resultat;
-	}
+	} //il faut que la fonction returne un vecteur!!!
 
 Pendule::Pendule(double longueur1, double masse1, double frottement1, Vecteur P, Vecteur Q) : Oscillateur(P, Q, masse1), longueur(longueur1), frottement(frottement1) {
 	if (longueur1<=0) {
@@ -17,12 +19,12 @@ Pendule::Pendule(double longueur1, double masse1, double frottement1, Vecteur P,
 	};
 //get
 
-double::Pendule setlongueur(double set){longueur=set;}
-double :: Pendule setfrottement(double set){frottement=set;}
+void Pendule::setlongueur(double set){longueur=set;}
+void Pendule::setfrottement(double set){frottement=set;}
 
 //set
 
-void :: Pendule getlongeur()const{return longueur;}
-void:: Pendule getfrottement()const{return frottement;}
+double Pendule::getlongueur()const{return longueur;}
+double Pendule::getfrottement()const{return frottement;}
 
 	

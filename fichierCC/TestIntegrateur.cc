@@ -1,7 +1,7 @@
 
 #include <iostream>
 #include <vector> 
-#include "Vecteur.h"
+#include "vecteur.h"
 #include <cmath> 
 #include "oscillateur.h"
 #include "integrateur.h"
@@ -10,7 +10,7 @@
 
 using namespace std;
 
-
+/*
 int main() {
 	
 	Vecteur P(5);
@@ -63,4 +63,4 @@ cout << "deuxieme partie du test" << endl;
 	
 	return 0;
 	}
-
+*/
