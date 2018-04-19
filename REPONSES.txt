@@ -55,3 +55,9 @@ La classe IntegrateurEulerCromer (qu'on a appele IntegrateurEC) est une sous cla
 [Question P7.1] Comment se situent ces classes par rapport à la classe Oscillateur définie la semaine passée ?
 Les classes Pendule et Ressort sont deux sous classes differentes par héritage de la superclasse Oscillateur. Les deux implementent la methode fonction de la classe Oscillateur
 et partagent les attributs d'Oscillateur. Nous avons aussi rajoute des nouveaux attributs à ces deux classes.
+
+
+SEMAINE 7:
+[Question P8.1] En termes de POO, quelle est donc la nature de la méthode dessine() ?
+dessine est une méthode de type void car elle n effectue 
+
