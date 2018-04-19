@@ -1,4 +1,6 @@
+#pragma once
 
+#include <iostream>
 //incomplete 
 class Supportdessin {
 	
@@ -11,4 +13,4 @@ class Supportdessin {
 	
 	
 	
-}
+};

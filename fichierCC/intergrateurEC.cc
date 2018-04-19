@@ -1,4 +1,8 @@
+#pragma once
+
+#include <iostream>
 #include "integrateurEC.h"
+#include "integrateur.h"
 
 using namespace std; 
 

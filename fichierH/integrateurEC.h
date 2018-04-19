@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include "integrateur.h"
 #include "vecteur.h"
 #include "oscillateur.h"
