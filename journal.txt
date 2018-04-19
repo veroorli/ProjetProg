@@ -72,9 +72,23 @@ création des constructeurs de la classe Vecteur,qui permet l initialisation de 
 l autre lorsque l on entre trois coordonnes cartésiennes de type double 
 // Pour éviter … nous avons choisit de créer un constructeur par défaut (celui par défaut par défaut de la version c++ étant été supprime lors de la creation des constructeurs précédents)
 
-Création de surcharges: a chaque  méthode de la classe vecteur , surcharges internet/externe. 
+Création de surcharges: a chaque  méthode de la classe vecteur , surcharges interne/externe. 
+Opérateurs algébriques : 
 **aux surcharges conseilles nous avons rajouté dans la classe vecteur une surcharge de l'opérateur [] qui permet d'avoir plus facile accès aux éléments de l'attribut privé "vecteur" de type vector.
 
 
-//il faut écrire le test oscillateur et ca surcharge 
+//il faut écrire le test oscillateur et sa surcharge 
 //il faut écrire le test intégrateur 
+
+Création de la classe Oscillateur contient vecteur position P et son vecteur dérive Q en private et une méthode correspondant a une équation différentielle quelconque testant P et Q.
+
+
+SEMAINE 5:
+
+-Creation de la superclasse intégrateur avec comme sous classe par héritage  intégrateur euleur cromer qui est un type d intégration possible : contient la méthode evolue qui permet d intégrer sur un temps dt les équations différentielles des differents pendules ressorts que l on utilisera par la suite .
+
+_Creation sous classes
+
+
+
+

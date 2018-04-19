@@ -53,5 +53,5 @@ les differents types possibiles d'integration numeriques, et donc on rajoutera l
 La classe IntegrateurEulerCromer (qu'on a appele IntegrateurEC) est une sous classe de la classe Integrateur.
 
 [Question P7.1] Comment se situent ces classes par rapport à la classe Oscillateur définie la semaine passée ?
-Les classes Pendule et Ressort sont deux sous classes differentes de la classe Oscillateur. Les deux implementent la methode fonction de la classe Oscillateur
-et partagent les attrubuts d'Oscillateur. Nous avons aussi rajoute des nouveaux attributs à ces deux classes.
+Les classes Pendule et Ressort sont deux sous classes differentes par héritage de la superclasse Oscillateur. Les deux implementent la methode fonction de la classe Oscillateur
+et partagent les attributs d'Oscillateur. Nous avons aussi rajoute des nouveaux attributs à ces deux classes.
