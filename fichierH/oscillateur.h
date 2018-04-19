@@ -4,8 +4,9 @@
 #include <iostream>
 #include "vecteur.h"
 #include "supportdessin.h"
+#include "dessinable.h"
 
-class Oscillateur:: public Dessinable{
+class Oscillateur : public Dessinable{
 	public:
 	
 	virtual Vecteur fonction(double to); //J'ai mis ca comme virtuelle comme ca l'integrateur peut etre associe a ressort et pendule 

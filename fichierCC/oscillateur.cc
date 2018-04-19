@@ -1,6 +1,8 @@
 #include <iostream>
 #include "vecteur.h"
 #include "supportdessin.h"
+#include "dessinable.h"
+#include "oscillateur.h"
 
 using namespace std;
 
@@ -27,7 +29,7 @@ Vecteur Oscillateur :: getG() const {
 	return G;
 	};
 	//constructeur
-Oscillateur :: Oscillateur(Vecteur P, Vecteur Q, double masse) : P(P), Q(Q), masse(masse), G(0) {
+Oscillateur :: Oscillateur(Vecteur P, Vecteur Q, double masse, Supportdessin* support) : Dessinable(support), P(P), Q(Q), masse(masse), G(0) {
 	if (P.size() != Q.size()){
 		cout << "erreur taille P differente de Q" << endl;
 		}

@@ -9,11 +9,9 @@
 
 using namespace std;
 
-
 int main() {
 	
 ///////////////////
-
 // un vecteur en 3D :
 Vecteur vect1(1.0, 2.0, -0.1);
 

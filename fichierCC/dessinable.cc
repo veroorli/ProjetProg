@@ -1,24 +1,20 @@
 #include <vector>
+#include "dessinable.h"
 #include "supportdessin.h"
 
-class Dessinable {
-	protected: 
+
+	//constructeur1
+	Dessinable::Dessinable(Supportdessin* support) : support(support) 
+	{}
+	
+	//constructeur2
+	Dessinable::Dessinable()  {support = nullptr;}
+	
+	
 	//fonction dessine
-	virtual void dessine() = 0;
-	//constructeur 
-	  Dessinable::Dessinable(Supportdessin* support = nullptr) 
-	   {}
+	void Dessinable::dessine() {};
+	
 	//destructeur
-	
-	private:
-	Supportdessin* support;
-	
-	};
-	
-	Dessinable::void dessine(Oscillateur const& oscillateur) {
-		 support->dessine(*this); } 
-
-	//le texte est affiche dans un methode de supportdessin
-
-	Dessinable::Dessinable(SupportaDessin support = nullptr) 
-	   {}
+	Dessinable:: ~Dessinable(){
+		delete support;
+		};

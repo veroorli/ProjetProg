@@ -1,14 +1,17 @@
 
-//incomplete 
-class Supportdessin {
+#include <iostream>
+#include "pendule.h"
+#include "ressort.h"
+#include "supportdessin.h"
+
+
+/*
+using namespace std;
+
+	 void Supportdessin::dessine(Pendule const& pendule){};
 	
-	public:
-	//constructeur :: attributs??
-	//DESTRUCTEUR
-	virtual dessine(Pendule pendule const&)=0;
-	virtual dessine(Ressort ressort const&)=0;
-	//virtual dessine(Torsion torsion const&)=0
+	 void Supportdessin::dessine(Ressort const& ressort){};
+
 	
 	
-	
-}
+*/
