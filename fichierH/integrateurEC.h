@@ -8,7 +8,7 @@
 class IntegrateurEC : public Integrateur {
 	
 	public: 
-	void evolue (Oscillateur& oscillateur, double dt, double t0) ;
+	virtual void evolue (Oscillateur& oscillateur, double dt, double t0)override ;
 	private:
 	
 	}; 
