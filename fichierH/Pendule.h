@@ -4,13 +4,14 @@
 #include "vecteur.h"
 #include "oscillateur.h"
 #include "pendule.h"
+#include "supportdessin.h"
 
 class Pendule : public Oscillateur {
 	//il faut faire un coinstructeur pour un vecteur a une dimension P et un vectuer de dim 1 Q(degree de liberte 1)
 	public: 
 	Vecteur fonction(double to);
 	//constructeur du pendule
-	Pendule(double longueur, double masse, double frottement, Vecteur P, Vecteur Q);
+	Pendule(double longueur, double masse, double frottement, Vecteur P, Vecteur Q, Supportdessin* support);
     //set
     void setlongueur(double set);
     void setfrottement(double set);

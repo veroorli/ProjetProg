@@ -3,8 +3,9 @@
 
 #include <iostream>
 #include "vecteur.h"
+#include "supportdessin.h"
 
-class Oscillateur{
+class Oscillateur:: public Dessinable{
 	public:
 	
 	virtual Vecteur fonction(double to); //J'ai mis ca comme virtuelle comme ca l'integrateur peut etre associe a ressort et pendule 
@@ -15,7 +16,7 @@ class Oscillateur{
 	Vecteur getQ() const;
 	Vecteur getG() const;
 	//constructeur
-	Oscillateur(Vecteur P, Vecteur Q, double masse); //on part du principe que la masse est au denominateur dans toutes les eq diff ses sous classes
+	Oscillateur(Vecteur P, Vecteur Q, double masse, Supportdessin* support); //on part du principe que la masse est au denominateur dans toutes les eq diff ses sous classes
 	Oscillateur();
 	
 	protected:

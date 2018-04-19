@@ -1,12 +1,13 @@
 #include <iostream>
 #include "ressort.h"
+#include "supportdessin.h"
 
 
 using namespace std;
 
 //constructeur
-Ressort::Ressort (Vecteur& P,Vecteur& Q,double k,double masse,double lambda,Vecteur& A):
-	Oscillateur(P, Q,masse), k(k),lambda(lambda), A(A) 
+Ressort::Ressort (Vecteur& P,Vecteur& Q,double k,double masse,double lambda,Vecteur& A, Supportdessin* support):
+	Oscillateur(P, Q,masse, support), k(k),lambda(lambda), A(A) 
 	{}
 // fonction diff	
 Vecteur Ressort:: fonction(double to){

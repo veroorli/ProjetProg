@@ -6,10 +6,11 @@
 #include "integrateur.h"
 #include "vecteur.h"
 #include "oscillateur.h"
+#include "supportdessin.h"
 
 class Ressort : public Oscillateur  {
 public: 
-Ressort (Vecteur& P,Vecteur& Q,double k,double masse,double lambda,Vecteur& A);
+Ressort (Vecteur& P,Vecteur& Q,double k,double masse,double lambda,Vecteur& A, Supportdessin* support);
 //pour A il faut : verifier que a a trois dimension,si pas le cas diminuer ou augmenter la dimension , normaliser a .
 
 	

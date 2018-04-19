@@ -1,5 +1,6 @@
 #include <iostream>
-#include "oscillateur.h"
+#include "vecteur.h"
+#include "supportdessin.h"
 
 using namespace std;
 

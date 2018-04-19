@@ -2,6 +2,7 @@
 #include "vecteur.h"
 #include "oscillateur.h"
 #include "pendule.h"
+#include "supportdessin.h"
 
 
 Vecteur Pendule :: fonction(double to) {
@@ -12,7 +13,7 @@ Vecteur Pendule :: fonction(double to) {
 	return resultat;
 	} //il faut que la fonction returne un vecteur!!!
 
-Pendule::Pendule(double longueur1, double masse1, double frottement1, Vecteur P, Vecteur Q) : Oscillateur(P, Q, masse1), longueur(longueur1), frottement(frottement1) {
+Pendule::Pendule(double longueur1, double masse1, double frottement1, Vecteur P, Vecteur Q, Supportdessin* support) : Oscillateur(P, Q, masse1, support), longueur(longueur1), frottement(frottement1) {
 	if (longueur1<=0) {
 		std::cout<<"erreur longueur trop petite ou nulle pendule"<< std::endl; 
 		}
