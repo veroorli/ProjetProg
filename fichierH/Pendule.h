@@ -10,6 +10,8 @@ class Pendule : public Oscillateur {
 	//il faut faire un coinstructeur pour un vecteur a une dimension P et un vectuer de dim 1 Q(degree de liberte 1)
 	public: 
 	Vecteur fonction(double to);
+	//constructeur sans support
+	Pendule(double longueur1, double masse1, double frottement1, Vecteur P, Vecteur Q);
 	//constructeur du pendule
 	Pendule(double longueur, double masse, double frottement, Vecteur P, Vecteur Q, Supportdessin* support);
     //set
@@ -18,6 +20,8 @@ class Pendule : public Oscillateur {
     //get
     double getlongueur()const;
     double getfrottement() const;
+    
+    
     
 	private:
 	double longueur; //longueur pendule

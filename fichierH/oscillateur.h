@@ -16,9 +16,12 @@ class Oscillateur : public Dessinable{
 	Vecteur getP() const;
 	Vecteur getQ() const;
 	Vecteur getG() const;
-	//constructeur
+	//constructeur avec support
 	Oscillateur(Vecteur P, Vecteur Q, double masse, Supportdessin* support); //on part du principe que la masse est au denominateur dans toutes les eq diff ses sous classes
+	//constructeur sans rien
 	Oscillateur();
+	//constructeur sans support
+	Oscillateur(Vecteur P, Vecteur Q, double masse);
 	
 	protected:
 	Vecteur G;//gravité initialisé dans le constructeur

@@ -18,3 +18,4 @@
 	Dessinable:: ~Dessinable(){
 		delete support;
 		};
+	

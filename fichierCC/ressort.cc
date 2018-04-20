@@ -5,17 +5,25 @@
 
 using namespace std;
 
-//constructeur
+//constructeur support
 Ressort::Ressort (Vecteur& P,Vecteur& Q,double k,double masse,double lambda,Vecteur& A, Supportdessin* support):
 	Oscillateur(P, Q,masse, support), k(k),lambda(lambda), A(A) 
 	{}
+//constructeur support
+Ressort::Ressort (Vecteur& P,Vecteur& Q,double k,double masse,double lambda,Vecteur& A):
+	Oscillateur(P, Q,masse), k(k),lambda(lambda), A(A) 
+	{}	
+
 // fonction diff	
 Vecteur Ressort:: fonction(double to){
 	Vecteur resultat(3); //returne un resultat en 3D comme pendule
-	double res_fonction = ((-k/masse)*P[0]-(lambda/masse)*Q[0]+G*A);
+	double res_fonction = ((-k/masse)*P[0]-(lambda/masse)*Q[0]+G*(A*(1/A.norme())));
 	resultat.set_coord(1, res_fonction); 
 		return resultat; //il faut que la fonction returne un vecteur 
 	}
+	
+void Ressort::dessine() {cout << "eureka!";} 
+	
  // set
 void Ressort::setk (double set) {
  k = set; 

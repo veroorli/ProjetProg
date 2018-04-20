@@ -1,4 +1,4 @@
-/*
+
 #include <iostream>
 #include <vector> 
 #include "vecteur.h"
@@ -40,4 +40,3 @@ cout << "ressort : " << ress << endl;
 //cout << "pendule" << pend << endl;
 cout << A << endl;
 }
-*/

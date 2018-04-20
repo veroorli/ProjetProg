@@ -1,4 +1,4 @@
-
+/*
 #include <iostream>
 #include <vector> 
 #include "vecteur.h"
@@ -50,4 +50,4 @@ cout << (vect1 ^ vect2) << endl;
 
 
 
-	} 
+	} */
