@@ -4,6 +4,7 @@
 #include "pendule.h"
 #include "supportdessin.h"
 
+using namespace std;
 
 Vecteur Pendule :: fonction(double to) {
 	Vecteur resultat(3); //vectuer en 3D
@@ -35,4 +36,6 @@ void Pendule::setfrottement(double set){frottement=set;}
 double Pendule::getlongueur()const{return longueur;}
 double Pendule::getfrottement()const{return frottement;}
 
+
+void Pendule::dessine() {cout << "eureka!";} 
 	

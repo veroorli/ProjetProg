@@ -1,7 +1,7 @@
 BIN := programme
 
 
-CXXFLAGS += -pedantic -Wall # pour les purs et durs
+CXXFLAGS += -pedantic -std=c++17# pour les purs et durs
 CXXFLAGS += -g # pour debugger
 CXXFLAGS += -pg # pour profiler
 LDFLAGS += -pg # pour profiler
@@ -19,7 +19,7 @@ all: $(BIN)
 .PHONY: clear
 
 $(BIN): clear
-	g++ -o $@ $(FICHIERCC) -I $(FICHIERH)
+	g++ $(CXXFLAGS) -o $@ $(FICHIERCC) -I $(FICHIERH)
 
 clear:
 	rm -rfv $(BIN)

@@ -20,7 +20,7 @@ protected:
 	//destructeur
 	~Dessinable();
 	
-private:
+protected:
 	
 	Supportdessin* support;
 	

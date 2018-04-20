@@ -2,13 +2,22 @@
 #include <iostream>
 #include "dessinable.h"
 #include <vector>
-#include "integrateur"
+#include "integrateur.h"
+#include "supportdessin.h"
 
-class Systeme::public Dessinable{
+class Systeme : public Dessinable{ 
 	
 	public:
-	Systeme( vector<Oscillateur>liste_oscillateur,Integrateur* integrateur, Supportdessin* support);
+	
+	//constructeur sans support
+	Systeme(std::vector<Oscillateur*> liste_oscillateur,Integrateur* integrateur);
+	//constructeur avec support
+	Systeme(std::vector<Oscillateur*> liste_oscillateur,Integrateur* integrateur, Supportdessin* support);
+
 	void evolue (double dt, double t0);
-   private:
-   vector<Oscillateur>liste_oscillateur;
-   Integrateur* integrateur;
+	virtual void dessine() override;
+   
+	private:
+    std::vector<Oscillateur*> liste_oscillateur;
+    Integrateur* integrateur;
+};
