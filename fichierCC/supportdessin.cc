@@ -5,7 +5,7 @@
 #include "supportdessin.h"
 
 
-/*
+
 using namespace std;
 
 	 void Supportdessin::dessine(Pendule const& pendule){};
@@ -14,4 +14,4 @@ using namespace std;
 
 	
 	
-*/
+

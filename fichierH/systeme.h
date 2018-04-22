@@ -6,18 +6,20 @@
 #include "supportdessin.h"
 
 class Systeme : public Dessinable{ 
-	
-	public:
-	
-	//constructeur sans support
-	Systeme(std::vector<Oscillateur*> liste_oscillateur,Integrateur* integrateur);
-	//constructeur avec support
-	Systeme(std::vector<Oscillateur*> liste_oscillateur,Integrateur* integrateur, Supportdessin* support);
+        
+        public:
+        
+        //constructeur sans support
+        Systeme(std::vector<Oscillateur*> liste_oscillateur,Integrateur* integrateur);
+        //constructeur avec support
+        Systeme(std::vector<Oscillateur*> liste_oscillateur,Integrateur* integrateur, Supportdessin* support);
 
-	void evolue (double dt, double t0);
-	virtual void dessine() override;
+        void evolue (double dt, double t0);
+        virtual void dessine() override;
    
-	private:
+        private:
     std::vector<Oscillateur*> liste_oscillateur;
     Integrateur* integrateur;
 };
+
+

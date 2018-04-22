@@ -1,7 +1,7 @@
 BIN := programme
 
 
-CXXFLAGS += -pedantic -std=c++17# pour les purs et durs
+CXXFLAGS += -pedantic
 CXXFLAGS += -g # pour debugger
 CXXFLAGS += -pg # pour profiler
 LDFLAGS += -pg # pour profiler

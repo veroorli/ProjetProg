@@ -59,5 +59,16 @@ et partagent les attributs d'Oscillateur. Nous avons aussi rajoute des nouveaux 
 
 SEMAINE 7:
 [Question P8.1] En termes de POO, quelle est donc la nature de la méthode dessine() ?
-dessine est une méthode de type void car elle n effectue 
+dessine ac comme type de retour void car il y en a pas , et virtual car déclarée dans Dessinable et utilisée dans système sous classe héritée de Dessinable , ainsi que dans Support dessin qui n est pas sous classe de Dessinable mais un pointeur attribut de Dessinable pointe sur la classe Support Dessin.(moyen clair)
+
+[Question P8.2] Quelle est la bonne façon de le faire dans un cadre de programmation orientée-objet ? Dessinable a besoin de support dessin pas compris
+
+[Question P8.3] A quoi faut-il faire attention pour les classes contenant des pointeurs ? Quelles solutions peut-on envisager ?
+
+
+
+[Question P8.4] Comment représentez vous la classe Systeme ? 
+Expliquez votre conception (attributs, interface, ...).
+
+
 

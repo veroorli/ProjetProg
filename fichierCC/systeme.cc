@@ -23,7 +23,7 @@
  
  
  void Systeme::dessine() 
-  {std::cout << "eureka!" << std::endl;} //support->dessine(*this); } //il faut avoir fait support dessine 
+  {support->dessine(*this); } 
  
  void Systeme::evolue (double dt, double t0) {
 	 for (auto oscillateur : liste_oscillateur)
